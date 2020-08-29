@@ -1,0 +1,45 @@
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <hr />
+    <div id="MyCalculator">
+        <table>
+            <tr>
+                <th>Value1</th>
+                <th>Value2</th>
+                <th>Value3</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" v-model="val1" id="txtVal1" /></td>
+                <td>
+                    <input type="text" v-model="val2" id="txtVal2" /></td>
+                <td>
+                    <input type="text" v-model="val3" id="txtVal3" /></td>
+                <td>
+                    {{TotalSum}}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var CalApp = new Vue({
+            el: "#MyCalculator",
+            data: {
+                val1: 0,
+                val2: 0,
+                val3: 0
+            },
+            
+            methods: {
+               
+            },
+            computed: {
+                TotalSum: function () {
+                    return parseInt(this.val1)+parseInt(this.val2)+parseInt(this.val3)
+                }
+            }
+        })
+
+    </script>
